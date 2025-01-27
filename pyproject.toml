@@ -1,0 +1,18 @@
+[project]
+name = "curso-estatistica-basica"
+version = "0.1.0"
+description = "Materiais de apresentação para um curso introdutório de 2h sobre estatística descritiva básica e tipos de dados computacionais."
+authors = [
+    {name = "Bruno Azuma Balzano"}
+]
+license = {text = "AGLP3"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter (>=1.1.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
