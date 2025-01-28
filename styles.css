@@ -1,0 +1,6 @@
+/* styles.css */
+.reveal .cor-destaque td:nth-child(3), 
+.reveal .cor-destaque th:nth-child(3) {
+  background-color: #e6f3ff;
+  border: 2px solid navy;
+}
