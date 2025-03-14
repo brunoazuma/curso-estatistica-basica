@@ -142,7 +142,7 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 
 :::
 
-## Gráficos qualitativos: Barras, pizza e ressalvas
+## Gráficos qualitativos: Barras
 
 ```{python}
 # Removido as importações duplicadas
@@ -157,17 +157,56 @@ order = ['Não Satisfatório', 'Satisfatório', 'Plenamente Satisfatório']
 df_counts['Aproveitamento'] = pd.Categorical(df_counts['Aproveitamento'], categories=order, ordered=True)
 df_counts = df_counts.sort_values('Aproveitamento')
 
-# Cria e exibe o gráfico de barras
-fig = px.bar(df_counts, x='Aproveitamento', y='Número de alunos', title='Número de alunos por Aproveitamento', category_orders={'Aproveitamento': order})
+# Variáveis para configuração de fonte e cores
+main_color = "#222"
+main_family = "Source Sans Pro, Helvetica, sans-serif"
+main_size = 32
+heading2_size = int(main_size * 1.6)  # Ex: 51px (arredondado para o inteiro)
+# Margem superior calculada a partir da fonte base (ex: 32 * 3.75 = 120)
+margin_top = int(main_size * 3.75)
 
-# Atualize o layout: fundo branco e linhas horizontais de grade com cor rgb(229,236,246)
+# Cria e exibe o gráfico de barras
+fig = px.bar(df_counts, x='Aproveitamento', y='Número de alunos',
+             title='Número de alunos por Aproveitamento',
+             category_orders={'Aproveitamento': order})
+
 fig.update_layout(
-    plot_bgcolor='white',
-    paper_bgcolor='white'
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    margin=dict(t=margin_top)
 )
-fig.update_yaxes(showgrid=True, gridcolor='rgb(229,236,246)')
+fig.update_xaxes(
+    title_text=None,  # Remove o título do eixo x
+    tickfont=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    )
+)
+fig.update_yaxes(
+    title_text=None,  # Remove o título do eixo y
+    tickfont=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    showgrid=True,
+    gridcolor="rgba(229,236,246,1)"
+)
 fig.show()
 ```
+
+## Gráficos qualitativos: Barras, pizza e ressalvas
 
 ## Gráficos quantitativos: pontos e linha
 ## Gráficos quantitativos: histograma
