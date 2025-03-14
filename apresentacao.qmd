@@ -8,13 +8,17 @@ bibliography: references.bib
 csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia-e-tecnologia-abnt
 ---
 
+```{python}
+# Célula inicial: importação das bibliotecas utilizadas
+from graphviz import Digraph
+from IPython.display import SVG, HTML
+```
+
 # Tipos de dados e apresentação
 ## Tipos de variáveis
 ```{python}
 #| fig-cap: "Fonte: Adaptado de @bussab_estatistica_basica."
 #| fig-cap-location: bottom
-from graphviz import Digraph
-from IPython.display import SVG, HTML
 
 # Configuração do diagrama (alteração apenas na cor das arestas)
 diagrama = Digraph(
