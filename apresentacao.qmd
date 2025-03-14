@@ -12,6 +12,8 @@ csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia
 # Célula inicial: importação das bibliotecas utilizadas
 from graphviz import Digraph
 from IPython.display import SVG, HTML
+import pandas as pd
+import plotly.express as px
 ```
 
 # Tipos de dados e apresentação
@@ -141,6 +143,32 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 :::
 
 ## Gráficos qualitativos: Barras, pizza e ressalvas
+
+```{python}
+# Removido as importações duplicadas
+# Carrega o CSV em um dataframe
+df = pd.read_csv("data/alunos.csv")
+
+# Agrega a contagem por 'Aproveitamento'
+df_counts = df.groupby('Aproveitamento').size().reset_index(name='Número de alunos')
+
+# Define a ordem desejada para as categorias
+order = ['Não Satisfatório', 'Satisfatório', 'Plenamente Satisfatório']
+df_counts['Aproveitamento'] = pd.Categorical(df_counts['Aproveitamento'], categories=order, ordered=True)
+df_counts = df_counts.sort_values('Aproveitamento')
+
+# Cria e exibe o gráfico de barras
+fig = px.bar(df_counts, x='Aproveitamento', y='Número de alunos', title='Número de alunos por Aproveitamento', category_orders={'Aproveitamento': order})
+
+# Atualize o layout: fundo branco e linhas horizontais de grade com cor rgb(229,236,246)
+fig.update_layout(
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+fig.update_yaxes(showgrid=True, gridcolor='rgb(229,236,246)')
+fig.show()
+```
+
 ## Gráficos quantitativos: pontos e linha
 ## Gráficos quantitativos: histograma
 ## Gráficos quantitativos: boxplot
