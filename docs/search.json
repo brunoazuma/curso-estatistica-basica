@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis",
+    "href": "apresentacao.html#tipos-de-variáveis",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis",
+    "text": "Tipos de variáveis\n\n\n\n\n\n\n\n\nClassificacaoVariavel\n\n\nA-&gt;B\n\n\n\n\nA-&gt;C\n\n\n\n\nB-&gt;D\n\n\n\n\nB-&gt;E\n\n\n\n\nC-&gt;F\n\n\n\n\nC-&gt;G\n\n\n\n\nA\n\nVariável\n\n\n\nB\n\nQualitativa\n\n\n\nC\n\nQuantitativa\n\n\n\nD\n\nNominal\n\n\n\nE\n\nOrdinal\n\n\n\nF\n\nDiscreta\n\n\n\nG\n\nContínua\n\n\n\n\nFonte: Adaptado de Bussab; Morettin (2010)."
+  },
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis-exemplo",
+    "href": "apresentacao.html#tipos-de-variáveis-exemplo",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis: exemplo",
+    "text": "Tipos de variáveis: exemplo\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+  },
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis-nominal",
+    "href": "apresentacao.html#tipos-de-variáveis-nominal",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis: Nominal",
+    "text": "Tipos de variáveis: Nominal\n\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+  },
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis-ordinal",
+    "href": "apresentacao.html#tipos-de-variáveis-ordinal",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis: Ordinal",
+    "text": "Tipos de variáveis: Ordinal\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+  },
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis-discreta",
+    "href": "apresentacao.html#tipos-de-variáveis-discreta",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis: Discreta",
+    "text": "Tipos de variáveis: Discreta\n\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+  },
+  {
+    "objectID": "apresentacao.html#tipos-de-variáveis-contínua",
+    "href": "apresentacao.html#tipos-de-variáveis-contínua",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Tipos de variáveis: Contínua",
+    "text": "Tipos de variáveis: Contínua\n\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-barras",
+    "href": "apresentacao.html#gráficos-qualitativos-barras",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Barras",
+    "text": "Gráficos qualitativos: Barras"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-barras-pizza-e-ressalvas",
+    "href": "apresentacao.html#gráficos-qualitativos-barras-pizza-e-ressalvas",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Barras, pizza e ressalvas",
+    "text": "Gráficos qualitativos: Barras, pizza e ressalvas"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
+    "href": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: pontos e linha",
+    "text": "Gráficos quantitativos: pontos e linha"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-histograma",
+    "href": "apresentacao.html#gráficos-quantitativos-histograma",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: histograma",
+    "text": "Gráficos quantitativos: histograma"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "href": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: boxplot",
+    "text": "Gráficos quantitativos: boxplot"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
+    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de centralidade: média, mediana e moda",
+    "text": "Medidas de centralidade: média, mediana e moda"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão",
+    "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de dispersão: variância e desvio padrão",
+    "text": "Medidas de dispersão: variância e desvio padrão"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-gerais-de-posição-quantis",
+    "href": "apresentacao.html#medidas-gerais-de-posição-quantis",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas gerais de posição: quantis",
+    "text": "Medidas gerais de posição: quantis"
+  },
+  {
+    "objectID": "apresentacao.html#função-de-densidade-de-probabilidade-e-quantis",
+    "href": "apresentacao.html#função-de-densidade-de-probabilidade-e-quantis",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Função de densidade de probabilidade e quantis",
+    "text": "Função de densidade de probabilidade e quantis"
+  },
+  {
+    "objectID": "apresentacao.html#boxplot-em-detalhes",
+    "href": "apresentacao.html#boxplot-em-detalhes",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Boxplot em detalhes",
+    "text": "Boxplot em detalhes"
+  },
+  {
+    "objectID": "apresentacao.html#qualitativas-x-qualitativas-frequência-absoluta-e-relativa",
+    "href": "apresentacao.html#qualitativas-x-qualitativas-frequência-absoluta-e-relativa",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Qualitativas x qualitativas: frequência absoluta e relativa",
+    "text": "Qualitativas x qualitativas: frequência absoluta e relativa"
+  },
+  {
+    "objectID": "apresentacao.html#qualitativa-x-quantitativa-pearson-spearman-e-boxplot",
+    "href": "apresentacao.html#qualitativa-x-quantitativa-pearson-spearman-e-boxplot",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Qualitativa x quantitativa: pearson, spearman e boxplot",
+    "text": "Qualitativa x quantitativa: pearson, spearman e boxplot"
+  },
+  {
+    "objectID": "apresentacao.html#quantitativa-x-quantitativa-pearson-spearman-e-gráfico-de-dispersão",
+    "href": "apresentacao.html#quantitativa-x-quantitativa-pearson-spearman-e-gráfico-de-dispersão",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Quantitativa x quantitativa: pearson, spearman e gráfico de dispersão",
+    "text": "Quantitativa x quantitativa: pearson, spearman e gráfico de dispersão"
+  },
+  {
+    "objectID": "apresentacao.html#regressão-linear-e-cuidados",
+    "href": "apresentacao.html#regressão-linear-e-cuidados",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Regressão linear e cuidados",
+    "text": "Regressão linear e cuidados"
+  },
+  {
+    "objectID": "apresentacao.html#dados-estruturados",
+    "href": "apresentacao.html#dados-estruturados",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Dados estruturados",
+    "text": "Dados estruturados"
+  },
+  {
+    "objectID": "apresentacao.html#dados-não-estruturados",
+    "href": "apresentacao.html#dados-não-estruturados",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Dados não estruturados",
+    "text": "Dados não estruturados"
+  },
+  {
+    "objectID": "apresentacao.html#dados-semi-estruturados",
+    "href": "apresentacao.html#dados-semi-estruturados",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Dados semi-estruturados",
+    "text": "Dados semi-estruturados"
+  },
+  {
+    "objectID": "apresentacao.html#vantagens-e-desvantagens",
+    "href": "apresentacao.html#vantagens-e-desvantagens",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Vantagens e desvantagens",
+    "text": "Vantagens e desvantagens\n\n\n\n\nBUSSAB, Wilton de Oliveira; MORETTIN, Pedro Alberto. Estatística básica. São Paulo, Brasil: Saraiva Educação, 2010."
+  }
+]
