@@ -183,6 +183,7 @@ fig.update_layout(
         size=heading2_size,
         color=main_color
     ),
+    title_x=0.5,          # Centraliza o título do gráfico
     margin=dict(t=margin_top)
 )
 fig.update_xaxes(
@@ -204,6 +205,90 @@ fig.update_yaxes(
     gridcolor="rgba(229,236,246,1)"
 )
 fig.show()
+```
+
+## Gráficos qualitativos: Pizza
+
+```{python}
+# Cria e exibe o gráfico de pizza utilizando os mesmos dados agregados (df_counts)
+pie_fig = px.pie(df_counts, names='Aproveitamento', values='Número de alunos',
+                 title='Distribuição de Aproveitamento')
+pie_fig.update_traces(textposition='inside', textinfo='percent+label',
+                      textfont=dict(color="white"))
+pie_fig.update_layout(
+    showlegend=False,
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    title_x=0.5,          # Centraliza o título do gráfico de pizza
+    margin=dict(t=margin_top)
+)
+pie_fig.show()
+```
+
+## Gráficos qualitativos: Ressalvas
+
+```{python}
+# Duplique o gráfico de pizza, removendo os textos dentro das fatias
+resalvas_pie = px.pie(df_counts, names='Aproveitamento', values='Número de alunos',
+                      title='Distribuição de Aproveitamento - Ressalvas')
+resalvas_pie.update_traces(textposition='inside', textinfo='none')
+resalvas_pie.update_layout(
+    showlegend=False,
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    title_x=0.5,
+    margin=dict(t=margin_top)
+)
+resalvas_pie.show()
+```
+
+## Gráficos qualitativos: Mais ressalvas
+
+```{python}
+# Cria contagem de alunos por Nome
+name_counts = df.groupby('Nome').size().reset_index(name='Contagem')
+
+# Cria o gráfico de pizza com a contagem por Nome
+name_pie = px.pie(name_counts, names='Nome', values='Contagem', title='Distribuição de Nomes')
+name_pie.update_traces(textposition='inside', textinfo='percent+label', textfont=dict(color="white"))
+name_pie.update_layout(
+    showlegend=False,
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    title_x=0.5,
+    margin=dict(t=margin_top)
+)
+name_pie.show()
 ```
 
 ## Gráficos qualitativos: Barras, pizza e ressalvas
