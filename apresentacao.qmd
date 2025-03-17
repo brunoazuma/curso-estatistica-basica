@@ -291,9 +291,53 @@ name_pie.update_layout(
 name_pie.show()
 ```
 
-## Gráficos qualitativos: Barras, pizza e ressalvas
-
 ## Gráficos quantitativos: pontos e linha
+
+```{python}
+# Agrupa os dados para o gráfico de bolhas: cada combinação de Nota e Cor/Raça
+bubble_df = df.groupby(['Nota', 'Cor/Raça']).size().reset_index(name='Count')
+
+# Cria o gráfico de bolhas, onde o tamanho de cada bolha representa o número de alunos
+bubble_fig = px.scatter(bubble_df, x='Cor/Raça', y='Nota',
+                        size='Count', color='Cor/Raça',
+                        title='Notas por Cor/Raça (Bubble Chart)',
+                        size_max=60)
+bubble_fig.update_layout(
+    showlegend=False,
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    title_x=0.5,
+    margin=dict(t=margin_top)
+)
+bubble_fig.update_xaxes(
+    tickfont=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+)
+bubble_fig.update_yaxes(
+    tickfont=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    showgrid=True,
+    gridcolor="rgba(229,236,246,1)"
+)
+bubble_fig.show()
+```
+
 ## Gráficos quantitativos: histograma
 ## Gráficos quantitativos: boxplot
 
