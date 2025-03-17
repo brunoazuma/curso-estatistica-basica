@@ -16,7 +16,7 @@ import pandas as pd
 import plotly.express as px
 ```
 
-# Tipos de dados e apresentação
+# Tipos de dados
 ## Tipos de variáveis
 ```{python}
 #| fig-cap: "Fonte: Adaptado de @bussab_estatistica_basica."
@@ -142,20 +142,12 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 
 :::
 
-## Gráficos qualitativos: Barras
+# Medidas resumo
+## Medidas de centralidade: média, mediana e moda
 
 ```{python}
-# Removido as importações duplicadas
 # Carrega o CSV em um dataframe
 df = pd.read_csv("data/alunos.csv")
-
-# Agrega a contagem por 'Aproveitamento'
-df_counts = df.groupby('Aproveitamento').size().reset_index(name='Número de alunos')
-
-# Define a ordem desejada para as categorias
-order = ['Não Satisfatório', 'Satisfatório', 'Plenamente Satisfatório']
-df_counts['Aproveitamento'] = pd.Categorical(df_counts['Aproveitamento'], categories=order, ordered=True)
-df_counts = df_counts.sort_values('Aproveitamento')
 
 # Variáveis para configuração de fonte e cores
 main_color = "#222"
@@ -164,6 +156,55 @@ main_size = 32
 heading2_size = int(main_size * 1.6)  # Ex: 51px (arredondado para o inteiro)
 # Margem superior calculada a partir da fonte base (ex: 32 * 3.75 = 120)
 margin_top = int(main_size * 3.75)
+
+# Ordena os dados pela nota e cria uma coluna numérica única
+df_sorted = df.sort_values("Nota").reset_index(drop=True)
+df_sorted["Idx"] = df_sorted.index
+
+# Cria o gráfico de barras usando o índice único no eixo x e "Nota" no eixo y,
+# removendo o "Idx" do tooltip via hover_data
+bar_cent = px.bar(df_sorted, x="Idx", y="Nota", title="Notas dos alunos", hover_data={'Idx': False})
+
+bar_cent.update_layout(
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    title_x=0.5,
+    margin=dict(t=margin_top)
+)
+
+# Remove as marcações no eixo x e mantém a grade horizontal no eixo y
+bar_cent.update_xaxes(showticklabels=False, title_text=None)
+bar_cent.update_yaxes(showgrid=True, gridcolor="rgba(229,236,246,1)")
+
+bar_cent.show()
+```
+
+## Medidas de dispersão: variância e desvio padrão
+## Medidas gerais de posição: quantis
+## Função de densidade de probabilidade e quantis
+## Boxplot em detalhes
+
+## Gráficos qualitativos: Barras
+
+```{python}
+
+# Agrega a contagem por 'Aproveitamento'
+df_counts = df.groupby('Aproveitamento').size().reset_index(name='Número de alunos')
+
+# Define a ordem desejada para as categorias
+order = ['Não Satisfatório', 'Satisfatório', 'Plenamente Satisfatório']
+df_counts['Aproveitamento'] = pd.Categorical(df_counts['Aproveitamento'], categories=order, ordered=True)
+df_counts = df_counts.sort_values('Aproveitamento')
 
 # Cria e exibe o gráfico de barras
 fig = px.bar(df_counts, x='Aproveitamento', y='Número de alunos',
@@ -340,13 +381,6 @@ bubble_fig.show()
 
 ## Gráficos quantitativos: histograma
 ## Gráficos quantitativos: boxplot
-
-# Medidas resumo
-## Medidas de centralidade: média, mediana e moda
-## Medidas de dispersão: variância e desvio padrão
-## Medidas gerais de posição: quantis
-## Função de densidade de probabilidade e quantis
-## Boxplot em detalhes
 
 # Associação entre variáveis
 ## Qualitativas x qualitativas: frequência absoluta e relativa
