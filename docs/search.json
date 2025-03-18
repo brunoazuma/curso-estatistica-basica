@@ -42,64 +42,22 @@
     "text": "Tipos de variáveis: Contínua\n\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
   },
   {
-    "objectID": "apresentacao.html#gráficos-qualitativos-barras",
-    "href": "apresentacao.html#gráficos-qualitativos-barras",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos qualitativos: Barras",
-    "text": "Gráficos qualitativos: Barras"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-qualitativos-pizza",
-    "href": "apresentacao.html#gráficos-qualitativos-pizza",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos qualitativos: Pizza",
-    "text": "Gráficos qualitativos: Pizza"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-qualitativos-ressalvas",
-    "href": "apresentacao.html#gráficos-qualitativos-ressalvas",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos qualitativos: Ressalvas",
-    "text": "Gráficos qualitativos: Ressalvas"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-qualitativos-mais-ressalvas",
-    "href": "apresentacao.html#gráficos-qualitativos-mais-ressalvas",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos qualitativos: Mais ressalvas",
-    "text": "Gráficos qualitativos: Mais ressalvas"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-qualitativos-barras-pizza-e-ressalvas",
-    "href": "apresentacao.html#gráficos-qualitativos-barras-pizza-e-ressalvas",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos qualitativos: Barras, pizza e ressalvas",
-    "text": "Gráficos qualitativos: Barras, pizza e ressalvas"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
-    "href": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: pontos e linha",
-    "text": "Gráficos quantitativos: pontos e linha"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-quantitativos-histograma",
-    "href": "apresentacao.html#gráficos-quantitativos-histograma",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: histograma",
-    "text": "Gráficos quantitativos: histograma"
-  },
-  {
-    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot",
-    "href": "apresentacao.html#gráficos-quantitativos-boxplot",
-    "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: boxplot",
-    "text": "Gráficos quantitativos: boxplot"
-  },
-  {
     "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
     "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de centralidade: média, mediana e moda",
+    "text": "Medidas de centralidade: média, mediana e moda"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
+    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de centralidade: média, mediana e moda",
+    "text": "Medidas de centralidade: média, mediana e moda"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
+    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de centralidade: média, mediana e moda",
     "text": "Medidas de centralidade: média, mediana e moda"
@@ -131,6 +89,55 @@
     "title": "Boas vindas ao mundo dos dados",
     "section": "Boxplot em detalhes",
     "text": "Boxplot em detalhes"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-barras",
+    "href": "apresentacao.html#gráficos-qualitativos-barras",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Barras",
+    "text": "Gráficos qualitativos: Barras"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-pizza",
+    "href": "apresentacao.html#gráficos-qualitativos-pizza",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Pizza",
+    "text": "Gráficos qualitativos: Pizza"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-ressalvas",
+    "href": "apresentacao.html#gráficos-qualitativos-ressalvas",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Ressalvas",
+    "text": "Gráficos qualitativos: Ressalvas"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-qualitativos-mais-ressalvas",
+    "href": "apresentacao.html#gráficos-qualitativos-mais-ressalvas",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos qualitativos: Mais ressalvas",
+    "text": "Gráficos qualitativos: Mais ressalvas"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
+    "href": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: pontos e linha",
+    "text": "Gráficos quantitativos: pontos e linha"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-histograma",
+    "href": "apresentacao.html#gráficos-quantitativos-histograma",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: histograma",
+    "text": "Gráficos quantitativos: histograma"
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "href": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: boxplot",
+    "text": "Gráficos quantitativos: boxplot"
   },
   {
     "objectID": "apresentacao.html#qualitativas-x-qualitativas-frequência-absoluta-e-relativa",
