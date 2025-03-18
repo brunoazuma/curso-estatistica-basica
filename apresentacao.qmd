@@ -10,6 +10,7 @@ csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia
 
 ```{python}
 # Célula inicial: importação das bibliotecas utilizadas
+from copy import copy
 from graphviz import Digraph
 from IPython.display import SVG, HTML
 import pandas as pd
@@ -187,6 +188,78 @@ bar_cent.update_xaxes(showticklabels=False, title_text=None)
 bar_cent.update_yaxes(showgrid=True, gridcolor="rgba(229,236,246,1)")
 
 bar_cent.show()
+```
+
+## Medidas de centralidade: média, mediana e moda
+
+```{python}
+bar_cent2 = copy(bar_cent)
+
+# Adiciona anotações para os pontos com índice 24 e 25
+val24 = df_sorted.loc[24, "Nota"]
+val25 = df_sorted.loc[25, "Nota"]
+bar_cent2.add_annotation(x=24, y=val24, text="25", showarrow=True, arrowhead=2)
+bar_cent2.add_annotation(x=25, y=val25, text="26", showarrow=True, arrowhead=2)
+
+bar_cent2.show()
+```
+
+## Medidas de centralidade: média, mediana e moda
+
+```{python}
+# ...existing code...
+bar_cent3 = copy(bar_cent)
+
+# Supondo que a moda é definida pelos valores das colunas nos índices 24 a 29,
+# adicionamos uma linha entre os pontos (24, 8.5) e (29, 8.5)
+bar_cent3.update_layout(
+    shapes=[
+        # Linha horizontal indicando a moda
+        dict(
+            type="line",
+            x0=24,
+            x1=29,
+            y0=8.5,
+            y1=8.5,
+            line=dict(color="red", width=2)
+        ),
+        # Marcador vertical no início
+        dict(
+            type="line",
+            x0=24,
+            x1=24,
+            y0=8.4,
+            y1=8.6,
+            line=dict(color="red", width=2)
+        ),
+        # Marcador vertical no fim
+        dict(
+            type="line",
+            x0=29,
+            x1=29,
+            y0=8.4,
+            y1=8.6,
+            line=dict(color="red", width=2)
+        )
+    ]
+)
+
+# Adiciona uma anotação centralizada na linha para destacar a moda
+bar_cent3.add_annotation(
+    x=(24 + 29) / 2,
+    y=8.5,
+    text="Moda (6 x 8,0)",
+    showarrow=False,
+    font=dict(
+        family="Arial",
+        size=12,
+        color="red"
+    ),
+    yshift=10
+)
+
+# ...existing code...
+bar_cent3.show()
 ```
 
 ## Medidas de dispersão: variância e desvio padrão
