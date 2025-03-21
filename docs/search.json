@@ -4,14 +4,14 @@
     "href": "apresentacao.html#tipos-de-variáveis",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Tipos de variáveis",
-    "text": "Tipos de variáveis\n\n\n\n\n\n\n\n\nClassificacaoVariavel\n\n\nA-&gt;B\n\n\n\n\nA-&gt;C\n\n\n\n\nB-&gt;D\n\n\n\n\nB-&gt;E\n\n\n\n\nC-&gt;F\n\n\n\n\nC-&gt;G\n\n\n\n\nA\n\nVariável\n\n\n\nB\n\nQualitativa\n\n\n\nC\n\nQuantitativa\n\n\n\nD\n\nNominal\n\n\n\nE\n\nOrdinal\n\n\n\nF\n\nDiscreta\n\n\n\nG\n\nContínua\n\n\n\n\nFonte: Adaptado de Bussab; Morettin (2010)."
+    "text": "Tipos de variáveis\n\n\n\n\n\n\n\n\nClassificacaoVariavel\n\n\nA-&gt;B\n\n\n\n\nA-&gt;C\n\n\n\n\nB-&gt;D\n\n\n\n\nB-&gt;E\n\n\n\n\nC-&gt;F\n\n\n\n\nC-&gt;G\n\n\n\n\nA\n\nVariável\n\n\n\nB\n\nQualitativa\n\n\n\nC\n\nQuantitativa\n\n\n\nD\n\nNominal\n\n\n\nE\n\nOrdinal\n\n\n\nF\n\nDiscreta\n\n\n\nG\n\nContínua\n\n\n\n\nFonte: Adaptado de Bussab; Morettin (2010).\n\n\n\nApresentar a hierarquia entre os típos de variáveis."
   },
   {
     "objectID": "apresentacao.html#tipos-de-variáveis-exemplo",
     "href": "apresentacao.html#tipos-de-variáveis-exemplo",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Tipos de variáveis: exemplo",
-    "text": "Tipos de variáveis: exemplo\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
+    "text": "Tipos de variáveis: exemplo\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório\n\n\n\n\nUtilizar esse e os próximos slides para exemplificar os tipos apresentados."
   },
   {
     "objectID": "apresentacao.html#tipos-de-variáveis-nominal",
@@ -46,21 +46,21 @@
     "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda"
+    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar que cada barra corresponde à nota de um aluno e que estão ordenadas para explicar mediana e moda."
   },
   {
     "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
     "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda"
+    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar como a mediana é calculada em séries de tamanhos ímpares ou pares. Exemplificar uso da mediana como resposta."
   },
   {
     "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
     "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda"
+    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar como a moda é identificada e qual pergunta ela responde."
   },
   {
     "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão",

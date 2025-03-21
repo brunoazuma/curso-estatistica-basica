@@ -68,9 +68,10 @@ diagrama.edges(['CF', 'CG'])
 svg_output = diagrama.pipe(format='svg').decode('utf-8')
 HTML(f'<div style="text-align:center">{svg_output}</div>')
 ```
-<!-- ::: {.legenda-pequena}
-**Fonte:** Adaptado de Bussab, Estatística Básica [@bussab_estatistica_basica].
-::: -->
+
+::: {.notes}
+Apresentar a hierarquia entre os típos de variáveis.
+:::
 
 ## Tipos de variáveis: exemplo
 
@@ -83,8 +84,12 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 | Juliana   | 23    | Preta         | 5.5  | Não Satisfatório             |
 | Lucas     | 20    | Indígena      | 9.0  | Plenamente Satisfatório      |
 
+::: {.notes}
+Utilizar esse e os próximos slides para exemplificar os tipos apresentados.
+:::
+
 ## Tipos de variáveis: Nominal
- 
+
 ::: {.cor-destaque}
 
 | Nome      | Idade | **Cor/Raça** | Nota | Aproveitamento               |
@@ -99,7 +104,7 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 :::
 
 ## Tipos de variáveis: Ordinal
- 
+
 ::: {.aproveitamento-destaque}
 
 | Nome      | Idade | Cor/Raça   | Nota | **Aproveitamento**          |
@@ -114,7 +119,7 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 :::
 
 ## Tipos de variáveis: Discreta
- 
+
 ::: {.idade-destaque}
 
 | Nome      | **Idade** | Cor/Raça   | Nota | Aproveitamento            |
@@ -129,7 +134,7 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 :::
 
 ## Tipos de variáveis: Contínua
- 
+
 ::: {.nota-destaque}
 
 | Nome      | Idade | Cor/Raça   | **Nota** | Aproveitamento            |
@@ -144,6 +149,7 @@ HTML(f'<div style="text-align:center">{svg_output}</div>')
 :::
 
 # Medidas resumo
+
 ## Medidas de centralidade: média, mediana e moda
 
 ```{python}
@@ -190,6 +196,10 @@ bar_cent.update_yaxes(showgrid=True, gridcolor="rgba(229,236,246,1)")
 bar_cent.show()
 ```
 
+::: {.notes}
+Explicar que cada barra corresponde à nota de um aluno e que estão ordenadas para explicar mediana e moda.
+:::
+
 ## Medidas de centralidade: média, mediana e moda
 
 ```{python}
@@ -203,6 +213,11 @@ bar_cent2.add_annotation(x=25, y=val25, text="26", showarrow=True, arrowhead=2)
 
 bar_cent2.show()
 ```
+
+::: {.notes}
+Explicar como a mediana é calculada em séries de tamanhos ímpares ou pares.
+Exemplificar uso da mediana como resposta.
+:::
 
 ## Medidas de centralidade: média, mediana e moda
 
@@ -261,6 +276,10 @@ bar_cent3.add_annotation(
 # ...existing code...
 bar_cent3.show()
 ```
+
+::: {.notes}
+Explicar como a moda é identificada e qual pergunta ela responde.
+:::
 
 ## Medidas de dispersão: variância e desvio padrão
 ## Medidas gerais de posição: quantis
