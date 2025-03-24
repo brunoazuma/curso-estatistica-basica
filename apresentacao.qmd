@@ -282,6 +282,21 @@ bar_cent3.show()
 Explicar como a moda é identificada e qual pergunta ela responde.
 :::
 
+## Medidas de centralidade: média, mediana e moda
+
+> a *média aritmética* [...] é a soma das observações dividida pelo número delas. ^[@bussab_estatistica_basica, p. 35.]
+
+. . .
+
+> A média aritmética simples [...] é a soma do total de valores de uma determinada variável (discreta ou contínua) dividida pelo número total de observações. ^[@favero_manual_analise, p. 38.]
+
+
+::: {.notes}
+A ideia aqui é mostrar que média é complicada de definir, mas simples de entender: é quase como uma festinha colaborativa, onde cada pessoa leva uma coisa, tudo é colocado em uma mesa e depois dividido por igual para cada pessoa.
+
+Citar que a média é importante porque permite definir a variância. (depois retomar quando falar de regressão)
+:::
+
 ## Medidas de dispersão: variância e desvio padrão
 ## Medidas gerais de posição: quantis
 ## Função de densidade de probabilidade e quantis
