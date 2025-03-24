@@ -4,6 +4,7 @@ author: "Bruno Azuma Balzano"
 format:
     revealjs:
         css: styles.css
+        theme: simple
 bibliography: references.bib
 csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia-e-tecnologia-abnt
 ---
@@ -424,15 +425,52 @@ name_pie.update_layout(
 name_pie.show()
 ```
 
-## Gráficos quantitativos: pontos e linha
+## Gráficos qualitativos: Mapa de árvore (treemap)
 
 ```{python}
 # Agrupa os dados para o gráfico de bolhas: cada combinação de Nota e Cor/Raça
-bubble_df = df.groupby(['Nota', 'Cor/Raça']).size().reset_index(name='Count')
+df_counts_2 = df.groupby(['Nota', 'Cor/Raça']).size().reset_index(name='Número de alunos')
+
+# Converte o gráfico de pizza em um gráfico treemap utilizando os mesmos dados agregados (df_counts)
+treemap_fig = px.treemap(df_counts_2,
+                         path=['Cor/Raça'],
+                         values='Número de alunos',
+                         title='Distribuição de Cor/Raça')
+
+# Exibe o percentual de cada área e troca todas as letras para a cor branca
+treemap_fig.update_traces(
+    textinfo="label+percent root",
+    textfont=dict(color="white")
+)
+
+treemap_fig.update_layout(
+    showlegend=False,
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color="white"
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color="black"
+    ),
+    title_x=0.5,
+    margin=dict(t=margin_top)
+)
+
+treemap_fig.show()
+```
+
+## Gráficos quantitativos: pontos e linha
+
+```{python}
 
 # Cria o gráfico de bolhas, onde o tamanho de cada bolha representa o número de alunos
-bubble_fig = px.scatter(bubble_df, x='Cor/Raça', y='Nota',
-                        size='Count', color='Cor/Raça',
+bubble_fig = px.scatter(df_counts_2, x='Cor/Raça', y='Nota',
+                        size='Número de alunos', color='Cor/Raça',
                         title='Notas por Cor/Raça (Bubble Chart)',
                         size_max=60)
 bubble_fig.update_layout(
