@@ -1,6 +1,7 @@
 ---
 title: "Boas vindas ao mundo dos dados"
 author: "Bruno Azuma Balzano"
+lang: pt-br
 format:
     revealjs:
         css: styles.css
@@ -201,26 +202,7 @@ bar_cent.show()
 Explicar que cada barra corresponde à nota de um aluno e que estão ordenadas para explicar mediana e moda.
 :::
 
-## Medidas de centralidade: média, mediana e moda
-
-```{python}
-bar_cent2 = copy(bar_cent)
-
-# Adiciona anotações para os pontos com índice 24 e 25
-val24 = df_sorted.loc[24, "Nota"]
-val25 = df_sorted.loc[25, "Nota"]
-bar_cent2.add_annotation(x=24, y=val24, text="25", showarrow=True, arrowhead=2)
-bar_cent2.add_annotation(x=25, y=val25, text="26", showarrow=True, arrowhead=2)
-
-bar_cent2.show()
-```
-
-::: {.notes}
-Explicar como a mediana é calculada em séries de tamanhos ímpares ou pares.
-Exemplificar uso da mediana como resposta.
-:::
-
-## Medidas de centralidade: média, mediana e moda
+## Medidas de centralidade: Moda
 
 ```{python}
 # ...existing code...
@@ -282,7 +264,26 @@ bar_cent3.show()
 Explicar como a moda é identificada e qual pergunta ela responde.
 :::
 
-## Medidas de centralidade: média, mediana e moda
+## Medidas de centralidade: Mediana
+
+```{python}
+bar_cent2 = copy(bar_cent)
+
+# Adiciona anotações para os pontos com índice 24 e 25
+val24 = df_sorted.loc[24, "Nota"]
+val25 = df_sorted.loc[25, "Nota"]
+bar_cent2.add_annotation(x=24, y=val24, text="25", showarrow=True, arrowhead=2)
+bar_cent2.add_annotation(x=25, y=val25, text="26", showarrow=True, arrowhead=2)
+
+bar_cent2.show()
+```
+
+::: {.notes}
+Explicar como a mediana é calculada em séries de tamanhos ímpares ou pares.
+Exemplificar uso da mediana como resposta.
+:::
+
+## Medidas de centralidade: Média
 
 > a *média aritmética* [...] é a soma das observações dividida pelo número delas. ^[@bussab_estatistica_basica, p. 35.]
 
