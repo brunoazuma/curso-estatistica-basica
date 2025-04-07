@@ -404,6 +404,19 @@ fig_scatter.update_layout(
 fig_scatter.show()
 ```
 
+::: {.notes}
+Explicar que:
+
+- Os valores destacados indicam o desvio das observações com a média;
+
+- Somar todos os valores resulta em 0 (por definição);
+
+- Elevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;
+
+- Calcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.
+
+:::
+
 ## Medidas gerais de posição: quantis
 ## Função de densidade de probabilidade e quantis
 ## Boxplot em detalhes
