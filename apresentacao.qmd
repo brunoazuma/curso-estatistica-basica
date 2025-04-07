@@ -152,7 +152,7 @@ Utilizar esse e os próximos slides para exemplificar os tipos apresentados.
 
 # Medidas resumo
 
-## Medidas de centralidade: média, mediana e moda
+## Medidas de centralidade: Moda, mediana e média
 
 ```{python}
 # Carrega o CSV em um dataframe
@@ -299,6 +299,111 @@ Citar que a média é importante porque permite definir a variância. (depois re
 :::
 
 ## Medidas de dispersão: variância e desvio padrão
+
+```{python}
+# Calcula a média das notas
+mean_nota = df["Nota"].mean()
+
+# Cria o scatterplot: eixo x = índice do df, eixo y = "Nota"
+fig_scatter = px.scatter(df, x=df.index, y="Nota", title="Notas dos Alunos com Média e Desvios")
+
+# Adiciona uma linha horizontal representando a média em laranja
+fig_scatter.add_shape(
+    type="line",
+    x0=df.index.min(),
+    x1=df.index.max(),
+    y0=mean_nota,
+    y1=mean_nota,
+    line=dict(color="orange", dash="dash", width=2)
+)
+
+# Adiciona anotação na linha da média em laranja
+fig_scatter.add_annotation(
+    x=(df.index.min() + df.index.max()) / 2,
+    y=mean_nota,
+    text="Média",
+    showarrow=False,
+    font=dict(color="orange", size=14),
+    yshift=-10
+)
+
+# Seleciona um aluno com nota acima da média e outro com nota abaixo da média
+above_idx = (df["Nota"] - mean_nota).idxmax()
+below_idx = (df["Nota"] - mean_nota).idxmin()
+nota_above = df.loc[above_idx, "Nota"]
+nota_below = df.loc[below_idx, "Nota"]
+dev_above = nota_above - mean_nota
+dev_below = mean_nota - nota_below
+
+# Para o aluno com nota acima da média: adiciona uma linha vertical para destacar o desvio
+fig_scatter.add_shape(
+    type="line",
+    x0=above_idx,
+    x1=above_idx,
+    y0=mean_nota,
+    y1=nota_above,
+    line=dict(color="green", width=2)
+)
+# Anotação com o valor do desvio positivo
+fig_scatter.add_annotation(
+    x=above_idx,
+    y=(nota_above + mean_nota) / 2,
+    text=f"Desvio: +{dev_above:.2f}",
+    showarrow=True,
+    arrowhead=1,
+    ax=40,
+    ay=0,
+    font=dict(color="green", size=12)
+)
+
+# Para o aluno com nota abaixo da média: adiciona uma linha vertical para destacar o desvio
+fig_scatter.add_shape(
+    type="line",
+    x0=below_idx,
+    x1=below_idx,
+    y0=nota_below,
+    y1=mean_nota,
+    line=dict(color="red", width=2)
+)
+# Anotação com o valor do desvio negativo
+fig_scatter.add_annotation(
+    x=below_idx,
+    y=(nota_below + mean_nota) / 2,
+    text=f"Desvio: -{dev_below:.2f}",
+    showarrow=True,
+    arrowhead=1,
+    ax=-40,
+    ay=0,
+    font=dict(color="red", size=12)
+)
+
+# Oculta o label e os ticks do eixo x
+fig_scatter.update_xaxes(
+    title_text=None,
+    showticklabels=False,
+    ticks=""
+)
+
+# Ajusta margin e configurações de fontes utilizadas nos gráficos anteriores
+fig_scatter.update_layout(
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    font=dict(
+        family=main_family,
+        size=main_size,
+        color=main_color
+    ),
+    title_font=dict(
+        family=main_family,
+        size=heading2_size,
+        color=main_color
+    ),
+    margin=dict(t=margin_top)
+)
+
+fig_scatter.show()
+```
+
 ## Medidas gerais de posição: quantis
 ## Função de densidade de probabilidade e quantis
 ## Boxplot em detalhes
