@@ -42,25 +42,32 @@
     "text": "Tipos de variáveis: Contínua\n\n\n\n\n\n\n\n\n\n\n\nNome\nIdade\nCor/Raça\nNota\nAproveitamento\n\n\n\n\nAna\n20\nBranca\n8.5\nSatisfatório\n\n\nCarlos\n22\nPreta\n6.0\nNão Satisfatório\n\n\nMariana\n19\nParda\n9.7\nPlenamente Satisfatório\n\n\nPedro\n21\nAmarela\n7.2\nSatisfatório\n\n\nJuliana\n23\nPreta\n5.5\nNão Satisfatório\n\n\nLucas\n20\nIndígena\n9.0\nPlenamente Satisfatório"
   },
   {
-    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
-    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda",
+    "objectID": "apresentacao.html#medidas-de-centralidade-moda-mediana-e-média",
+    "href": "apresentacao.html#medidas-de-centralidade-moda-mediana-e-média",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar que cada barra corresponde à nota de um aluno e que estão ordenadas para explicar mediana e moda."
+    "section": "Medidas de centralidade: Moda, mediana e média",
+    "text": "Medidas de centralidade: Moda, mediana e média\n\n\n                                                \n\n\n\nExplicar que cada barra corresponde à nota de um aluno e que estão ordenadas para explicar mediana e moda."
   },
   {
-    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
-    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-1",
+    "objectID": "apresentacao.html#medidas-de-centralidade-moda",
+    "href": "apresentacao.html#medidas-de-centralidade-moda",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar como a mediana é calculada em séries de tamanhos ímpares ou pares. Exemplificar uso da mediana como resposta."
+    "section": "Medidas de centralidade: Moda",
+    "text": "Medidas de centralidade: Moda\n\n\n                                                \n\n\n\nExplicar como a moda é identificada e qual pergunta ela responde."
   },
   {
-    "objectID": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
-    "href": "apresentacao.html#medidas-de-centralidade-média-mediana-e-moda-2",
+    "objectID": "apresentacao.html#medidas-de-centralidade-mediana",
+    "href": "apresentacao.html#medidas-de-centralidade-mediana",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Medidas de centralidade: média, mediana e moda",
-    "text": "Medidas de centralidade: média, mediana e moda\n\n\n                                                \n\n\n\nExplicar como a moda é identificada e qual pergunta ela responde."
+    "section": "Medidas de centralidade: Mediana",
+    "text": "Medidas de centralidade: Mediana\n\n\n                                                \n\n\n\nExplicar como a mediana é calculada em séries de tamanhos ímpares ou pares. Exemplificar uso da mediana como resposta."
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-centralidade-média",
+    "href": "apresentacao.html#medidas-de-centralidade-média",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de centralidade: Média",
+    "text": "Medidas de centralidade: Média\n\na média aritmética […] é a soma das observações dividida pelo número delas. 1\n\n\n\nA média aritmética simples […] é a soma do total de valores de uma determinada variável (discreta ou contínua) dividida pelo número total de observações. 2\n\n\nA ideia aqui é mostrar que média é complicada de definir, mas simples de entender: é quase como uma festinha colaborativa, onde cada pessoa leva uma coisa, tudo é colocado em uma mesa e depois dividido por igual para cada pessoa.\nCitar que a média é importante porque permite definir a variância. (depois retomar quando falar de regressão)\n\n\nBussab; Morettin (2010), p. 35.Fávero; Belfiore (2017), p. 38."
   },
   {
     "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão",
@@ -200,6 +207,6 @@
     "href": "apresentacao.html#vantagens-e-desvantagens",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Vantagens e desvantagens",
-    "text": "Vantagens e desvantagens\n\n\n\n\nBUSSAB, Wilton de Oliveira; MORETTIN, Pedro Alberto. Estatística básica. São Paulo, Brasil: Saraiva Educação, 2010."
+    "text": "Vantagens e desvantagens\n\n\n\n\nBUSSAB, Wilton de Oliveira; MORETTIN, Pedro Alberto. Estatística Básica. São Paulo, Brasil: Saraiva Educação, 2010.\n\n\nFÁVERO, Luiz Paulo; BELFIORE, Patrícia. Manual de Análise de Dados: Estatística e Modelagem Multivariada com Excel, SPSS e Stata. Rio de Janeiro, Brasil: Elsevier Brasil, 2017."
   }
 ]
