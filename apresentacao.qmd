@@ -438,7 +438,7 @@ Markdown(r'$$ \frac{1}{' + str(df.shape[0]) +
 . . .
 
 ```{python}
-Markdown('$$' + str(df['Nota'].var()) + '$$')
+Markdown('$$' + f'{df['Nota'].var():.2f}' + '$$')
 ```
 
 ::: {.notes}
@@ -448,6 +448,28 @@ Explicar que:
 
 :::
 
+## Medidas de dispersão: variância e desvio padrão
+
+$$ \text{dp}\left(X\right) = \sqrt{\text{Var}\left(X\right)} $$
+
+. . .
+
+```{python}
+Markdown(r'$$ \sqrt{' + f'{df['Nota'].var():.2f}' + '} = $$')
+```
+
+. . .
+
+```{python}
+Markdown('$$' + f'{df['Nota'].std():.2f}' + '$$')
+```
+::: {.notes}
+
+- Calcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.
+
+- Média +- desvio padrão = 7.8 +- 1.4
+
+:::
 
 ## Medidas gerais de posição: quantis
 ## Função de densidade de probabilidade e quantis
