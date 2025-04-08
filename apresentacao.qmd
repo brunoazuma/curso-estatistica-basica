@@ -156,7 +156,7 @@ Utilizar esse e os próximos slides para exemplificar os tipos apresentados.
 
 ```{python}
 # Carrega o CSV em um dataframe
-df = pd.read_csv("data/alunos.csv")
+df = pd.read_csv(r"C:\Users\855395\Git\curso-estatistica-basica\data\alunos.csv")
 
 # Variáveis para configuração de fonte e cores
 main_color = "#222"
@@ -416,6 +416,38 @@ Explicar que:
 - Calcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.
 
 :::
+
+## Medidas de dispersão: variância e desvio padrão
+
+$$ \text{Var}\left(X\right) = \frac{1}{n} \sum_{i=1}^{n} \left(x_i - \bar{x} \right)^2 $$
+
+. . .
+
+```{python}
+from IPython.display import Markdown, display
+# Cria uma string representando o somatório para o cálculo da variância
+mean_nota = df["Nota"].mean()
+variance_sum_str_init = " + ".join(
+    [f"({nota} - {mean_nota:.2f})²" for nota in df["Nota"][:2]])
+variance_sum_str_final = " + ".join(
+    [f"({nota} - {mean_nota:.2f})²" for nota in df["Nota"][-2:-1]])
+Markdown(r'$$ \frac{1}{' + str(df.shape[0]) +
+         r'}\left[{' + variance_sum_str_init + ' + ... + ' + variance_sum_str_final + r'}\right] = $$')
+```
+
+. . .
+
+```{python}
+Markdown('$$' + str(df['Nota'].var()) + '$$')
+```
+
+::: {.notes}
+Explicar que:
+
+- Elevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;
+
+:::
+
 
 ## Medidas gerais de posição: quantis
 ## Função de densidade de probabilidade e quantis
