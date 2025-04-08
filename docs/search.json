@@ -74,7 +74,21 @@
     "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de dispersão: variância e desvio padrão",
-    "text": "Medidas de dispersão: variância e desvio padrão"
+    "text": "Medidas de dispersão: variância e desvio padrão\n\n\n                                                \n\n\n\nExplicar que:\n\nOs valores destacados indicam o desvio das observações com a média;\nSomar todos os valores resulta em 0 (por definição);\nElevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;\nCalcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio."
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-1",
+    "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-1",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de dispersão: variância e desvio padrão",
+    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{Var}\\left(X\\right) = \\frac{1}{n} \\sum_{i=1}^{n} \\left(x_i - \\bar{x} \\right)^2 \\]\n\n\n\n\\[ \\frac{1}{50}\\left[{(8.5 - 7.80)² + (6.0 - 7.80)² + ... + (6.8 - 7.80)²}\\right] = \\]\n\n\n\n\n\n\n\\[1.95\\]\n\n\n\nExplicar que:\n\nElevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;"
+  },
+  {
+    "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-2",
+    "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-2",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Medidas de dispersão: variância e desvio padrão",
+    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{dp}\\left(X\\right) = \\sqrt{\\text{Var}\\left(X\\right)} \\]\n\n\n\n\\[ \\sqrt{1.95} = \\]\n\n\n\n\n\n\n\\[1.40\\]\n\n\n\n\nCalcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.\nMédia +- desvio padrão = 7.8 +- 1.4"
   },
   {
     "objectID": "apresentacao.html#medidas-gerais-de-posição-quantis",
