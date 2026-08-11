@@ -4,7 +4,7 @@
     "href": "apresentacao.html#tipos-de-variáveis",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Tipos de variáveis",
-    "text": "Tipos de variáveis\n\n\n\n\n\n\n\n\nClassificacaoVariavel\n\n\nA-&gt;B\n\n\n\n\nA-&gt;C\n\n\n\n\nB-&gt;D\n\n\n\n\nB-&gt;E\n\n\n\n\nC-&gt;F\n\n\n\n\nC-&gt;G\n\n\n\n\nA\n\nVariável\n\n\n\nB\n\nQualitativa\n\n\n\nC\n\nQuantitativa\n\n\n\nD\n\nNominal\n\n\n\nE\n\nOrdinal\n\n\n\nF\n\nDiscreta\n\n\n\nG\n\nContínua\n\n\n\n\nFonte: Adaptado de Bussab; Morettin (2010).\n\n\n\nApresentar a hierarquia entre os típos de variáveis."
+    "text": "Tipos de variáveis\n\n\n\n\n\nflowchart LR\n    A[Variável] --&gt; B[Qualitativa]\n    A --&gt; C[Quantitativa]\n    B --&gt; D[Nominal]\n    B --&gt; E[Ordinal]\n    C --&gt; F[Discreta]\n    C --&gt; G[Contínua]\n    classDef destaque fill:navy,color:white,stroke:navy\n    class A,B,C,D,E,F,G destaque\n\n\n\n\n\n\nFonte: adaptado de (Bussab; Morettin, 2010).\n\nApresentar a hierarquia entre os típos de variáveis."
   },
   {
     "objectID": "apresentacao.html#tipos-de-variáveis-exemplo",
@@ -81,35 +81,42 @@
     "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-1",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de dispersão: variância e desvio padrão",
-    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{Var}\\left(X\\right) = \\frac{1}{n} \\sum_{i=1}^{n} \\left(x_i - \\bar{x} \\right)^2 \\]\n\n\n\n\\[ \\frac{1}{50}\\left[{(8.5 - 7.80)² + (6.0 - 7.80)² + ... + (6.8 - 7.80)²}\\right] = \\]\n\n\n\n\n\n\n\\[1.95\\]\n\n\n\nExplicar que:\n\nElevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;"
+    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{Var}\\left(X\\right) = \\frac{1}{n} \\sum_{i=1}^{n} \\left(x_i - \\bar{x} \\right)^2 \\]\n\n\n\n\\[ \\frac{1}{50}\\left[{(8.5 - 7.8)² + (6.0 - 7.8)² + ... + (6.8 - 7.8)²}\\right] = \\]\n\n\n\n\n\n\n\\[ 1.91 \\]\n\n\n\nExplicar que:\n\nElevar os valores ao quadrado antes de calcular a média elimina o problema de soma 0;"
   },
   {
     "objectID": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-2",
     "href": "apresentacao.html#medidas-de-dispersão-variância-e-desvio-padrão-2",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas de dispersão: variância e desvio padrão",
-    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{dp}\\left(X\\right) = \\sqrt{\\text{Var}\\left(X\\right)} \\]\n\n\n\n\\[ \\sqrt{1.95} = \\]\n\n\n\n\n\n\n\\[1.40\\]\n\n\n\n\nCalcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.\nMédia +- desvio padrão = 7.8 +- 1.4"
+    "text": "Medidas de dispersão: variância e desvio padrão\n\\[ \\text{dp}\\left(X\\right) = \\sqrt{\\text{Var}\\left(X\\right)} \\]\n\n\n\n\\[ \\sqrt{1.91} = \\]\n\n\n\n\n\n\n\\[ 1.38 \\]\n\n\n\n\nCalcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.\nMédia +- desvio padrão = 7.8 +- 1.4"
   },
   {
     "objectID": "apresentacao.html#medidas-gerais-de-posição-quantis",
     "href": "apresentacao.html#medidas-gerais-de-posição-quantis",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Medidas gerais de posição: quantis",
-    "text": "Medidas gerais de posição: quantis"
+    "text": "Medidas gerais de posição: quantis\nQuantis dividem os dados ordenados em partes com a mesma proporção de observações. O quantil \\(Q_p\\) deixa aproximadamente \\(p\\times100\\%\\) dos valores abaixo dele.\n\\[ Q_p = \\operatorname{quantil}(X,p), \\qquad 0 \\leq p \\leq 1 \\]\n\n\n\n\n\n\n\n\n\nNota\n\n\n\n\nQ1 (25%)\n6.58\n\n\nMediana (50%)\n8.00\n\n\nQ3 (75%)\n9.15\n\n\n\n\n\n\n\n\nRelacionar quartis e mediana e mencionar percentis."
   },
   {
-    "objectID": "apresentacao.html#função-de-densidade-de-probabilidade-e-quantis",
-    "href": "apresentacao.html#função-de-densidade-de-probabilidade-e-quantis",
+    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "href": "apresentacao.html#gráficos-quantitativos-boxplot",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Função de densidade de probabilidade e quantis",
-    "text": "Função de densidade de probabilidade e quantis"
+    "section": "Gráficos quantitativos: Boxplot",
+    "text": "Gráficos quantitativos: Boxplot"
   },
   {
-    "objectID": "apresentacao.html#boxplot-em-detalhes",
-    "href": "apresentacao.html#boxplot-em-detalhes",
+    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot-detalhado",
+    "href": "apresentacao.html#gráficos-quantitativos-boxplot-detalhado",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Boxplot em detalhes",
-    "text": "Boxplot em detalhes"
+    "section": "Gráficos quantitativos: Boxplot detalhado",
+    "text": "Gráficos quantitativos: Boxplot detalhado\n\nA caixa vai de \\(Q_1\\) a \\(Q_3\\); sua altura é o intervalo interquartil, \\(IQR=Q_3-Q_1\\).\nA linha interna é a mediana; os bigodes mostram a faixa não classificada como atípica.\nPela regra de Tukey, valores abaixo de \\(Q_1-1{,}5IQR\\) ou acima de \\(Q_3+1{,}5IQR\\) são possíveis outliers.\nA posição da mediana e o comprimento dos bigodes ajudam a perceber assimetria."
+  },
+  {
+    "objectID": "apresentacao.html#gráficos-quantitativos-histograma",
+    "href": "apresentacao.html#gráficos-quantitativos-histograma",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Gráficos quantitativos: Histograma",
+    "text": "Gráficos quantitativos: Histograma\n\n\n                                                \n\n\n\nExplicar que o histograma agrupa uma variável quantitativa em intervalos. Lembrar que a escolha do número e da largura das classes altera a leitura, por isso convém comparar diferentes configurações e informar a escala."
   },
   {
     "objectID": "apresentacao.html#gráficos-qualitativos-barras",
@@ -147,80 +154,108 @@
     "text": "Gráficos qualitativos: Mapa de árvore (treemap)"
   },
   {
-    "objectID": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
-    "href": "apresentacao.html#gráficos-quantitativos-pontos-e-linha",
+    "objectID": "apresentacao.html#gráficos-quantitativos-pontos",
+    "href": "apresentacao.html#gráficos-quantitativos-pontos",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: pontos e linha",
-    "text": "Gráficos quantitativos: pontos e linha"
+    "section": "Gráficos quantitativos: pontos",
+    "text": "Gráficos quantitativos: pontos\nPodemos distribuir os valores de uma variável quantitativa em um único eixo."
   },
   {
-    "objectID": "apresentacao.html#gráficos-quantitativos-histograma",
-    "href": "apresentacao.html#gráficos-quantitativos-histograma",
+    "objectID": "apresentacao.html#qualitativas-x-qualitativas-frequência",
+    "href": "apresentacao.html#qualitativas-x-qualitativas-frequência",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: histograma",
-    "text": "Gráficos quantitativos: histograma"
+    "section": "Qualitativas x qualitativas: frequência",
+    "text": "Qualitativas x qualitativas: frequência\n\n\nFrequência absoluta\n\n\n\n\n\n\n\n\nAproveitamento\nNão Satisfatório\nPlenamente Satisfatório\nSatisfatório\n\n\nCor/Raça\n\n\n\n\n\n\n\nAmarela\n4\n0\n6\n\n\nBranca\n0\n4\n5\n\n\nIndígena\n4\n6\n0\n\n\nParda\n1\n5\n4\n\n\nPreta\n6\n0\n5"
   },
   {
-    "objectID": "apresentacao.html#gráficos-quantitativos-boxplot",
-    "href": "apresentacao.html#gráficos-quantitativos-boxplot",
+    "objectID": "apresentacao.html#qualitativas-x-qualitativas-frequência-1",
+    "href": "apresentacao.html#qualitativas-x-qualitativas-frequência-1",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Gráficos quantitativos: boxplot",
-    "text": "Gráficos quantitativos: boxplot"
+    "section": "Qualitativas x qualitativas: frequência",
+    "text": "Qualitativas x qualitativas: frequência\n\n\nFrequência relativa (%)\n\n\n\n\n\n\n\n\nAproveitamento\nNão Satisfatório\nPlenamente Satisfatório\nSatisfatório\n\n\nCor/Raça\n\n\n\n\n\n\n\nAmarela\n40.0\n0.0\n60.0\n\n\nBranca\n0.0\n44.4\n55.6\n\n\nIndígena\n40.0\n60.0\n0.0\n\n\nParda\n10.0\n50.0\n40.0\n\n\nPreta\n54.5\n0.0\n45.5\n\n\n\n\n\n\n\n\nExplicar que percentuais por linha respondem: entre as pessoas de uma categoria, como se distribui o aproveitamento? Trocar o denominador muda a pergunta estatística."
   },
   {
-    "objectID": "apresentacao.html#qualitativas-x-qualitativas-frequência-absoluta-e-relativa",
-    "href": "apresentacao.html#qualitativas-x-qualitativas-frequência-absoluta-e-relativa",
+    "objectID": "apresentacao.html#qualitativas-x-qualitativas-barras",
+    "href": "apresentacao.html#qualitativas-x-qualitativas-barras",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Qualitativas x qualitativas: frequência absoluta e relativa",
-    "text": "Qualitativas x qualitativas: frequência absoluta e relativa"
+    "section": "Qualitativas x qualitativas: Barras",
+    "text": "Qualitativas x qualitativas: Barras"
   },
   {
-    "objectID": "apresentacao.html#qualitativa-x-quantitativa-pearson-spearman-e-boxplot",
-    "href": "apresentacao.html#qualitativa-x-quantitativa-pearson-spearman-e-boxplot",
+    "objectID": "apresentacao.html#qualitativa-x-quantitativa-boxplot",
+    "href": "apresentacao.html#qualitativa-x-quantitativa-boxplot",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Qualitativa x quantitativa: pearson, spearman e boxplot",
-    "text": "Qualitativa x quantitativa: pearson, spearman e boxplot"
+    "section": "Qualitativa x quantitativa: Boxplot",
+    "text": "Qualitativa x quantitativa: Boxplot"
   },
   {
-    "objectID": "apresentacao.html#quantitativa-x-quantitativa-pearson-spearman-e-gráfico-de-dispersão",
-    "href": "apresentacao.html#quantitativa-x-quantitativa-pearson-spearman-e-gráfico-de-dispersão",
+    "objectID": "apresentacao.html#quantitativa-x-quantitativa-gráfico-de-dispersão",
+    "href": "apresentacao.html#quantitativa-x-quantitativa-gráfico-de-dispersão",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Quantitativa x quantitativa: pearson, spearman e gráfico de dispersão",
-    "text": "Quantitativa x quantitativa: pearson, spearman e gráfico de dispersão"
+    "section": "Quantitativa x quantitativa: Gráfico de Dispersão",
+    "text": "Quantitativa x quantitativa: Gráfico de Dispersão\n\n\n                                                \n\n\n\nCorrelação mede associação, não prova causa. É preciso observar escala, outliers, forma da nuvem e possíveis variáveis omitidas antes de interpretar um coeficiente."
   },
   {
-    "objectID": "apresentacao.html#regressão-linear-e-cuidados",
-    "href": "apresentacao.html#regressão-linear-e-cuidados",
+    "objectID": "apresentacao.html#regressão-linear-definição",
+    "href": "apresentacao.html#regressão-linear-definição",
     "title": "Boas vindas ao mundo dos dados",
-    "section": "Regressão linear e cuidados",
-    "text": "Regressão linear e cuidados"
+    "section": "Regressão linear: definição",
+    "text": "Regressão linear: definição\nNa regressão linear simples, modelamos a média de \\(Y\\) a partir de uma variável explicativa \\(X\\):\n\\[ \\widehat{Y}_i = \\widehat{\\beta}_0 + \\widehat{\\beta}_1X_i + e_i \\]\n\n\\(\\widehat{Y}_i\\) é o valor estimado de \\(Y\\) para a observação \\(i\\);\n\\(\\widehat{\\beta}_0\\) é o valor estimado de \\(Y\\) quando \\(X=0\\);\n\\(\\widehat{\\beta}_1\\) é a variação estimada de \\(Y\\) para cada unidade de variação em \\(X\\);\n\\(e_i\\) é o resíduo, ou seja, a diferença entre o valor observado e \\(\\widehat{Y}_i\\)."
+  },
+  {
+    "objectID": "apresentacao.html#regressão-linear-exemplo",
+    "href": "apresentacao.html#regressão-linear-exemplo",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Regressão linear: exemplo",
+    "text": "Regressão linear: exemplo\n\n\n                                                \n\n\n\\(\\widehat{Nota} = 11.62 + -0.18\\,Idade\\); \\(R^2 = 0.05\\)."
+  },
+  {
+    "objectID": "apresentacao.html#regressão-linear-cuidados-com-r2",
+    "href": "apresentacao.html#regressão-linear-cuidados-com-r2",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Regressão linear: cuidados com \\(R^2\\)",
+    "text": "Regressão linear: cuidados com \\(R^2\\)\n\nO \\(R^2\\) resume a proporção da variação explicada pelo modelo nesta amostra; não mede causalidade.\nO \\(R^2\\) também não indica se o modelo é adequado, apenas resume a proporção da variação explicada."
+  },
+  {
+    "objectID": "apresentacao.html#regressão-linear-quarteto-de-anscombe",
+    "href": "apresentacao.html#regressão-linear-quarteto-de-anscombe",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Regressão linear: quarteto de Anscombe",
+    "text": "Regressão linear: quarteto de Anscombe"
+  },
+  {
+    "objectID": "apresentacao.html#regressão-linear-cuidados-com-interpretação",
+    "href": "apresentacao.html#regressão-linear-cuidados-com-interpretação",
+    "title": "Boas vindas ao mundo dos dados",
+    "section": "Regressão linear: cuidados com interpretação",
+    "text": "Regressão linear: cuidados com interpretação\n\nEvite extrapolar para idades fora da faixa observada sem embasamento teórico;\nNão trate a associação expressa por uma regressão como efeito causal."
   },
   {
     "objectID": "apresentacao.html#dados-estruturados",
     "href": "apresentacao.html#dados-estruturados",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Dados estruturados",
-    "text": "Dados estruturados"
+    "text": "Dados estruturados\nDados estruturados seguem um esquema definido, com campos, tipos e relações previsíveis. A tabela de alunos é um exemplo: cada linha representa uma observação e cada coluna representa uma variável. Esse formato facilita consultas, validações e análises tabulares (Amazon Web Services, 2025; Fávero; Belfiore, 2017)."
   },
   {
     "objectID": "apresentacao.html#dados-não-estruturados",
     "href": "apresentacao.html#dados-não-estruturados",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Dados não estruturados",
-    "text": "Dados não estruturados"
+    "text": "Dados não estruturados\nDados não estruturados não seguem uma tabela fixa. Exemplos incluem textos livres, imagens, áudios e vídeos. A análise costuma exigir etapas de extração de atributos, como transcrição, classificação, reconhecimento de objetos ou análise de linguagem."
   },
   {
     "objectID": "apresentacao.html#dados-semi-estruturados",
     "href": "apresentacao.html#dados-semi-estruturados",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Dados semi-estruturados",
-    "text": "Dados semi-estruturados"
+    "text": "Dados semi-estruturados\nDados semiestruturados carregam alguma organização por chaves, marcas ou metadados, mas não exigem o mesmo esquema rígido de uma tabela. JSON, XML, logs e documentos com campos opcionais são exemplos. Antes da análise, normalmente é necessário normalizar estruturas aninhadas e tratar campos ausentes."
   },
   {
     "objectID": "apresentacao.html#vantagens-e-desvantagens",
     "href": "apresentacao.html#vantagens-e-desvantagens",
     "title": "Boas vindas ao mundo dos dados",
     "section": "Vantagens e desvantagens",
-    "text": "Vantagens e desvantagens\n\n\n\n\nBUSSAB, Wilton de Oliveira; MORETTIN, Pedro Alberto. Estatística Básica. São Paulo, Brasil: Saraiva Educação, 2010.\n\n\nFÁVERO, Luiz Paulo; BELFIORE, Patrícia. Manual de Análise de Dados: Estatística e Modelagem Multivariada com Excel, SPSS e Stata. Rio de Janeiro, Brasil: Elsevier Brasil, 2017."
+    "text": "Vantagens e desvantagens\n\n\n\n\n\n\n\n\nForma\nVantagens\nDesafios\n\n\n\n\nEstruturados\nConsulta, validação e agregação\nEsquema rígido e menor flexibilidade\n\n\nNão estruturados\nRiqueza de conteúdo e contexto\nMaior custo para extração de informação\n\n\nSemiestruturados\nFlexibilidade com alguma organização\nEsquemas variáveis e necessidade de transformação"
   }
 ]
