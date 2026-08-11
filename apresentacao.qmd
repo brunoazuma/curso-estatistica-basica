@@ -6,6 +6,7 @@ format:
     revealjs:
         css: styles.css
         theme: simple
+        embed-resources: true
 bibliography: references.bib
 csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia-e-tecnologia-abnt
 ---
@@ -13,63 +14,30 @@ csl: https://www.zotero.org/styles/instituto-brasileiro-de-informacao-em-ciencia
 ```{python}
 # Célula inicial: importação das bibliotecas utilizadas
 from copy import copy
-from graphviz import Digraph
-from IPython.display import SVG, HTML
+from IPython.display import Markdown, display
+from pathlib import Path
+import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 ```
 
 # Tipos de dados
 ## Tipos de variáveis
-```{python}
-#| fig-cap: "Fonte: Adaptado de @bussab_estatistica_basica."
-#| fig-cap-location: bottom
 
-# Configuração do diagrama (alteração apenas na cor das arestas)
-diagrama = Digraph(
-    name='ClassificacaoVariavel',
-    format='svg',
-    graph_attr={
-        'rankdir': 'LR',
-        'bgcolor': 'transparent',
-        'nodesep': '0.5',
-        'outputorder': 'edgesfirst'
-    },
-    node_attr={
-        'style': 'rounded,filled',
-        'fillcolor': 'navy',
-        'fontname': 'Helvetica',
-        'fontsize': '12',
-        'fontcolor': 'white',
-        'shape': 'box',
-        'color': 'navy',
-        'margin': '0'
-    },
-    edge_attr={
-        'color': 'navy',  # Alterado de '#444444' para 'navy'
-        'arrowhead': 'none',
-        'penwidth': '1.5',
-        'headclip': 'false',
-        'tailclip': 'false'
-    }
-)
-
-# Estrutura hierárquica (inalterada)
-diagrama.node('A', 'Variável')
-diagrama.node('B', 'Qualitativa')
-diagrama.node('C', 'Quantitativa')
-diagrama.edges(['AB', 'AC'])
-diagrama.node('D', 'Nominal')
-diagrama.node('E', 'Ordinal')
-diagrama.edges(['BD', 'BE'])
-diagrama.node('F', 'Discreta')
-diagrama.node('G', 'Contínua')
-diagrama.edges(['CF', 'CG'])
-
-# Renderize e envolva em uma div com a classe
-svg_output = diagrama.pipe(format='svg').decode('utf-8')
-HTML(f'<div style="text-align:center">{svg_output}</div>')
+```{mermaid}
+flowchart LR
+    A[Variável] --> B[Qualitativa]
+    A --> C[Quantitativa]
+    B --> D[Nominal]
+    B --> E[Ordinal]
+    C --> F[Discreta]
+    C --> G[Contínua]
+    classDef destaque fill:navy,color:white,stroke:navy
+    class A,B,C,D,E,F,G destaque
 ```
+
+Fonte: adaptado de [@bussab_estatistica_basica].
 
 ::: {.notes}
 Apresentar a hierarquia entre os típos de variáveis.
@@ -156,7 +124,7 @@ Utilizar esse e os próximos slides para exemplificar os tipos apresentados.
 
 ```{python}
 # Carrega o CSV em um dataframe
-df = pd.read_csv(r"C:\Users\855395\Git\curso-estatistica-basica\data\alunos.csv")
+df = pd.read_csv(Path("data") / "alunos.csv")
 
 # Variáveis para configuração de fonte e cores
 main_color = "#222"
@@ -428,9 +396,9 @@ from IPython.display import Markdown, display
 # Cria uma string representando o somatório para o cálculo da variância
 mean_nota = df["Nota"].mean()
 variance_sum_str_init = " + ".join(
-    [f"({nota} - {mean_nota:.2f})²" for nota in df["Nota"][:2]])
+    [f"({nota} - {mean_nota:.1f})²" for nota in df["Nota"][:2]])
 variance_sum_str_final = " + ".join(
-    [f"({nota} - {mean_nota:.2f})²" for nota in df["Nota"][-2:-1]])
+    [f"({nota} - {mean_nota:.1f})²" for nota in df["Nota"][-2:-1]])
 Markdown(r'$$ \frac{1}{' + str(df.shape[0]) +
          r'}\left[{' + variance_sum_str_init + ' + ... + ' + variance_sum_str_final + r'}\right] = $$')
 ```
@@ -438,7 +406,8 @@ Markdown(r'$$ \frac{1}{' + str(df.shape[0]) +
 . . .
 
 ```{python}
-Markdown('$$' + f'{df['Nota'].var():.2f}' + '$$')
+variance_nota = df["Nota"].var(ddof=0)
+Markdown(f"$$ {variance_nota:.2f} $$")
 ```
 
 ::: {.notes}
@@ -455,14 +424,15 @@ $$ \text{dp}\left(X\right) = \sqrt{\text{Var}\left(X\right)} $$
 . . .
 
 ```{python}
-Markdown(r'$$ \sqrt{' + f'{df['Nota'].var():.2f}' + '} = $$')
+Markdown(r'$$ \sqrt{' + f'{variance_nota:.2f}' + '} = $$')
 ```
 
 . . .
 
 ```{python}
-Markdown('$$' + f'{df['Nota'].std():.2f}' + '$$')
+Markdown(f'$$ {df["Nota"].std(ddof=0):.2f} $$')
 ```
+
 ::: {.notes}
 
 - Calcular a raiz da variância retorna os valores à mesma medida da variável, sendo equivalente ao desvio médio.
@@ -472,8 +442,73 @@ Markdown('$$' + f'{df['Nota'].std():.2f}' + '$$')
 :::
 
 ## Medidas gerais de posição: quantis
-## Função de densidade de probabilidade e quantis
-## Boxplot em detalhes
+
+Quantis dividem os dados ordenados em partes com a mesma proporção de observações. O quantil $Q_p$ deixa aproximadamente $p\times100\%$ dos valores abaixo dele.
+
+$$ Q_p = \operatorname{quantil}(X,p), \qquad 0 \leq p \leq 1 $$
+
+```{python}
+quantis_nota = df["Nota"].quantile([0.25, 0.50, 0.75])
+quantis_nota.rename(index={0.25: "Q1 (25%)", 0.50: "Mediana (50%)", 0.75: "Q3 (75%)"}).round(2).to_frame("Nota")
+```
+
+::: {.notes}
+Relacionar quartis e mediana e mencionar percentis.
+:::
+
+# Visualizando os dados
+
+## Gráficos quantitativos: Boxplot
+
+```{python}
+fig_box_detalhe = px.box(
+    df,
+    y="Nota",
+    points="all",
+    title="Boxplot das notas"
+)
+fig_box_detalhe.update_layout(
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    title_x=0.5,
+    margin=dict(t=margin_top),
+    yaxis_title="Nota",
+    xaxis_title=None
+)
+fig_box_detalhe.show()
+```
+
+## Gráficos quantitativos: Boxplot detalhado
+
+- A caixa vai de $Q_1$ a $Q_3$; sua altura é o intervalo interquartil, $IQR=Q_3-Q_1$.
+- A linha interna é a mediana; os bigodes mostram a faixa não classificada como atípica.
+- Pela regra de Tukey, valores abaixo de $Q_1-1{,}5IQR$ ou acima de $Q_3+1{,}5IQR$ são possíveis outliers.
+- A posição da mediana e o comprimento dos bigodes ajudam a perceber assimetria.
+
+## Gráficos quantitativos: Histograma
+
+```{python}
+fig_density = px.histogram(
+    df,
+    x="Nota",
+    nbins=8,
+    histnorm="probability density",
+    title="Distribuição empírica das notas"
+)
+fig_density.update_layout(
+    plot_bgcolor="#fff",
+    paper_bgcolor="#fff",
+    title_x=0.5,
+    margin=dict(t=margin_top),
+    xaxis_title="Nota",
+    yaxis_title="Densidade"
+)
+fig_density.show()
+```
+
+::: {.notes}
+Explicar que o histograma agrupa uma variável quantitativa em intervalos. Lembrar que a escolha do número e da largura das classes altera a leitura, por isso convém comparar diferentes configurações e informar a escala.
+:::
 
 ## Gráficos qualitativos: Barras
 
@@ -652,14 +687,16 @@ treemap_fig.update_layout(
 treemap_fig.show()
 ```
 
-## Gráficos quantitativos: pontos e linha
+## Gráficos quantitativos: pontos
+
+Podemos distribuir os valores de uma variável quantitativa em um único eixo.
 
 ```{python}
 
 # Cria o gráfico de bolhas, onde o tamanho de cada bolha representa o número de alunos
-bubble_fig = px.scatter(df_counts_2, x='Cor/Raça', y='Nota',
-                        size='Número de alunos', color='Cor/Raça',
-                        title='Notas por Cor/Raça (Bubble Chart)',
+bubble_fig = px.scatter(df_counts_2, x='Nota', y=[1]*len(df_counts_2),
+                        size='Número de alunos',
+                        title='Distribuição das notas',
                         size_max=60)
 bubble_fig.update_layout(
     showlegend=False,
@@ -685,29 +722,161 @@ bubble_fig.update_xaxes(
         color=main_color
     ),
 )
+# Hide y axis since it's not relevant for this plot
 bubble_fig.update_yaxes(
-    tickfont=dict(
-        family=main_family,
-        size=main_size,
-        color=main_color
-    ),
-    showgrid=True,
-    gridcolor="rgba(229,236,246,1)"
+    showgrid=False,
+    visible=False
+)
+bubble_fig.update_traces(
+    # suppress the y coordinate because the y-coordinate is irrelevant
+    hovertemplate="<b>Nota</b>: {x:.1f}<br><b>Número de alunos</b>: {marker.size}<extra></extra>",
 )
 bubble_fig.show()
 ```
 
-## Gráficos quantitativos: histograma
-## Gráficos quantitativos: boxplot
-
 # Associação entre variáveis
-## Qualitativas x qualitativas: frequência absoluta e relativa
-## Qualitativa x quantitativa: pearson, spearman e boxplot
-## Quantitativa x quantitativa: pearson, spearman e gráfico de dispersão
-## Regressão linear e cuidados
+## Qualitativas x qualitativas: frequência
+
+```{python}
+tabela_abs = pd.crosstab(df["Cor/Raça"], df["Aproveitamento"])
+tabela_rel_linha = tabela_abs.div(tabela_abs.sum(axis=1), axis=0).mul(100).round(1)
+display(Markdown("**Frequência absoluta**"))
+display(tabela_abs)
+```
+
+## Qualitativas x qualitativas: frequência
+
+```{python}
+display(Markdown("**Frequência relativa (%)**"))
+display(tabela_rel_linha)
+```
+
+::: {.notes}
+Explicar que percentuais por linha respondem: entre as pessoas de uma categoria, como se distribui o aproveitamento? Trocar o denominador muda a pergunta estatística.
+:::
+
+## Qualitativas x qualitativas: Barras
+
+```{python}
+# Cria o gráfico de barras empilhadas para mostrar a distribuição do aproveitamento por Cor/Raça
+fig_bar_aproveitamento = px.bar(
+    df.groupby(["Cor/Raça", "Aproveitamento"]).size().reset_index(name="Frequência"),
+    x="Cor/Raça",
+    y="Frequência",
+    color="Aproveitamento",
+    title="Distribuição do aproveitamento por Cor/Raça",
+    category_orders={"Aproveitamento": ["Não Satisfatório", "Satisfatório", "Plenamente Satisfatório"]}
+)
+fig_bar_aproveitamento.update_layout(title_x=0.5, margin=dict(t=margin_top))
+fig_bar_aproveitamento.show()
+``` 
+
+## Qualitativa x quantitativa: Boxplot
+
+```{python}
+fig_box_cor = px.box(
+    df,
+    x="Cor/Raça",
+    y="Nota",
+    color="Cor/Raça",
+    title="Distribuição da nota por Cor/Raça"
+)
+fig_box_cor.update_layout(showlegend=False, title_x=0.5, margin=dict(t=margin_top))
+fig_box_cor.show()
+```
+
+## Quantitativa x quantitativa: Gráfico de Dispersão
+
+```{python}
+fig_assoc = px.scatter(
+    df,
+    x="Idade",
+    y="Nota",
+    title="Relação entre idade e nota"
+)
+fig_assoc.update_layout(title_x=0.5, margin=dict(t=margin_top))
+fig_assoc.show()
+```
+
+::: {.notes}
+Correlação mede associação, não prova causa. É preciso observar escala, outliers, forma da nuvem e possíveis variáveis omitidas antes de interpretar um coeficiente.
+:::
+
+## Regressão linear: definição
+
+Na regressão linear simples, modelamos a média de $Y$ a partir de uma variável explicativa $X$:
+
+$$ \widehat{Y}_i = \widehat{\beta}_0 + \widehat{\beta}_1X_i + e_i $$
+
+- $\widehat{Y}_i$ é o valor estimado de $Y$ para a observação $i$;
+- $\widehat{\beta}_0$ é o valor estimado de $Y$ quando $X=0$;
+- $\widehat{\beta}_1$ é a variação estimada de $Y$ para cada unidade de variação em $X$;
+- $e_i$ é o resíduo, ou seja, a diferença entre o valor observado e $\widehat{Y}_i$.
+
+## Regressão linear: exemplo
+
+```{python}
+x = df["Idade"]
+y = df["Nota"]
+beta_1, beta_0 = np.polyfit(x, y, 1)
+y_estimado = beta_0 + beta_1 * x
+r2 = 1 - ((y - y_estimado) ** 2).sum() / ((y - y.mean()) ** 2).sum()
+fig_reg = px.scatter(df, x="Idade", y="Nota", title="Reta ajustada: nota em função da idade")
+fig_reg.add_trace(go.Scatter(
+    x=[x.min(), x.max()],
+    y=[beta_0 + beta_1 * x.min(), beta_0 + beta_1 * x.max()],
+    mode="lines",
+    name="Reta ajustada"
+))
+fig_reg.update_layout(title_x=0.5, margin=dict(t=margin_top))
+fig_reg.show()
+display(Markdown(f"$\\widehat{{Nota}} = {beta_0:.2f} + {beta_1:.2f}\\,Idade$; $R^2 = {r2:.2f}$."))
+```
+
+## Regressão linear: cuidados com $R^2$
+
+- O $R^2$ resume a proporção da variação explicada pelo modelo nesta amostra; não mede causalidade.
+- O $R^2$ também não indica se o modelo é adequado, apenas resume a proporção da variação explicada.
+
+## Regressão linear: quarteto de Anscombe
+
+```{python}
+import seaborn as sns
+anscombe = sns.load_dataset("anscombe")
+fig_anscombe = px.scatter(anscombe, x="x", y="y", facet_col="dataset", title="Quarteto de Anscombe", trendline="ols", trendline_color_override="orange")
+fig_anscombe.update_layout(title_x=0.5, margin=dict(t=margin_top))
+fig_anscombe.show()
+```
+
+## Regressão linear: cuidados com interpretação
+
+- Evite extrapolar para idades fora da faixa observada sem embasamento teórico;
+- Não trate a associação expressa por uma regressão como efeito causal.
 
 # Tipos de dados quanto à forma
+
 ## Dados estruturados
+
+Dados estruturados seguem um esquema definido, com campos, tipos e relações previsíveis. A tabela de alunos é um exemplo: cada linha representa uma observação e cada coluna representa uma variável. Esse formato facilita consultas, validações e análises tabulares [@favero_manual_analise; @aws_structured_data].
+
 ## Dados não estruturados
+
+Dados não estruturados não seguem uma tabela fixa. Exemplos incluem textos livres, imagens, áudios e vídeos. A análise costuma exigir etapas de extração de atributos, como transcrição, classificação, reconhecimento de objetos ou análise de linguagem.
+
 ## Dados semi-estruturados
+
+Dados semiestruturados carregam alguma organização por chaves, marcas ou metadados, mas não exigem o mesmo esquema rígido de uma tabela. JSON, XML, logs e documentos com campos opcionais são exemplos. Antes da análise, normalmente é necessário normalizar estruturas aninhadas e tratar campos ausentes.
+
 ## Vantagens e desvantagens
+
+| Forma | Vantagens | Desafios |
+|---|---|---|
+| Estruturados | Consulta, validação e agregação | Esquema rígido e menor flexibilidade |
+| Não estruturados | Riqueza de conteúdo e contexto | Maior custo para extração de informação |
+| Semiestruturados | Flexibilidade com alguma organização | Esquemas variáveis e necessidade de transformação |
+
+# A importância da forma dos dados
+
+A escolha do método deve acompanhar a forma dos dados: primeiro entendemos como foram coletados e organizados; depois definimos limpeza, visualização e modelo. Essa sequência reduz interpretações indevidas e torna a análise auditável [@favero_manual_analise].
+
+# Referências
